@@ -73,3 +73,8 @@ Crio a variável no AppController e uso nos element ou noutra parte de view.
 Também traduzi as duas frases do componente. Veja no código do componente do plugin e no AppController.
 
 
+
+Wait this text in english or use the google translate to translete now: 
+http://translate.google.com.br/
+
+A
