@@ -1,0 +1,20 @@
+Plugin Admin para o CakePHP
+
+	O plugin é simples, portanto pode não atender suas necessidades, mas por outro lado é simples na construção e pode facilmente ser modificado e ampliado.
+
+
+Sugestão
+
+- Ajuste o cake.generic.css para visualizar melhor os botões
+
+Produção
+
+Antes de colocar em produção:
+
+- Comente no layout a saída das consultas SQL
+- Mude no core.php o Debug para 0
+
+Sugestão de link:
+http://miftyisbored.com/a-complete-login-and-authentication-application-tutorial-for-cakephp-2-3/
+
+

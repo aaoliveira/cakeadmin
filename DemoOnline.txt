@@ -1,0 +1,26 @@
+Access
+
+http://ribafs.net.br/admin_demo/
+
+Try with users admin and manager
+
+login - admin
+
+pass - admin
+
+
+login - manager
+
+pass - manager
+
+
+Try to access action edit in Posts and see message "Privilégio não Cadastrado!" but access action.
+
+No make login with manager and try to access:
+
+http://ribafs.net.br/admin_demo/users
+
+See message "Acesso Negado!" but dont access controller users.
+
+Exists two layouts to admin and to manager.
+

@@ -1,0 +1,75 @@
+Funcionamento e Criação do Plugin Admin
+
+Nasceu da criação do componente AccessControl e para dar suporte ao mesmo.
+
+Base do Plugin
+Controllers, models e views: users, groups e privileges
+
+O objetivo é cadastrar um grupo para cada cation de cada controller, por exemplo:
+
+Grupo		Controller	Action
+managers	posts		index
+
+Então o componente verifica em tentativa de acesso a cada action.
+Primeira situação:
+- O usuário pertence ao grupo managers
+- O action está cadastrado para o grupo admins
+- Neste caso ele não terá acesso e receberá a mensagem "Acesso Negado!"
+
+Segunda situação:
+- O usuário pertence ao grupo managers
+- O action não está cadastrado (false)
+- Neste caso ele TERÁ acesso e receberá a mensagem "Privilégio não cadastrado!"
+
+Terceira situação:
+- O usuário pertence ao grupo admins
+- Nenhuma verificação será feita, pois o admins tem acesso a tudo.
+- Mas mesmo assim, ao acessar um action não cadastrado ele receberá a mensagem "Privilégio não cadastrado!"
+
+Cadastro Automático dos Actions das Tabelas Existentes
+Para os controllers Users, Groups e Privileges os actions já vem cadastrados.
+Mas para as demais tabelas do aplicativo como posts, clientes, funcionarios e outras precisamos cadastrar todos os seus privilégios. Veja que por padrão o plugin não oferece acesso público a nenhum action. Caso queira tornar públicos alguns actions do aplicativo, precisar efetuar as alterações no AppController.
+Para que o plugin cadastre todos os actions das demais tabelas basta ir ao AppController e descomentar a linha:
+// $this->AccessControl->tables($controller);
+
+Depois de descomentar, apenas acesse qualquer outra action para que ele faça o serviço.
+Importante: não faça o cadastro de nenhuma action manualmente, pois pode ser que assim não funciona.
+Depois de verificar se foram todas cadastradas em /privileges então volte a comentar a linha.
+
+Sugestões:
+
+Mudar a cor de fundo do botão do layout default para verde:
+
+Editar app/webroot/css/cake.generic.css
+
+Alterar a linha (linha 518 aqui, mas pode ser diferente. O ideal é procurar a string abaixo e alterar ):
+	background-image: -moz-linear-gradient(top, #fefefe, #dcdcdc);
+para
+	background-image: -moz-linear-gradient(top, #fefefe, #5BA150);
+ou
+	background-image: -moz-linear-gradient(top, #fefefe, #324D93);
+ou outra desejada.
+
+Mudar a cor do texto do Controller no header:
+Editar Editar app/webroot/css/cake.generic.css
+E mudar a cor do h3 para 
+h3 {
+	color: #2c68ff;
+
+Sabe como descobri este código acima? Com a ajuda do Firebug.
+
+
+Menus menutopo.ctp
+
+Estes pequenos elements ajudam a administrar o site.
+
+
+Tradução
+O sistema de tradução é muito primitivo, nada de i18n. Tudas as variáveis a serem traduzidas estão no AppController.
+A intenção é oferecer facilidade para alguém de outro idioma diferente do portugues e já traduzir no AppController.
+
+Crio a variável no AppController e uso nos element ou noutra parte de view.
+
+Também traduzi as duas frases do componente. Veja no código do componente do plugin e no AppController.
+
+
