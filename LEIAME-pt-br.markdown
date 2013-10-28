@@ -21,7 +21,7 @@ Não use tabelas com nomes users, groups nem privileges. Caso já tenha, precisa
 
 - Download: https://github.com/ribafs/cakeadmin
 
-- Demo Online: http://ribafs.net.br/admin_demo
+- Demo Online: http://ribafs.org/admin_demo
 
 - Faça o download, descompacte e renomeie a pasta para Admin
 
