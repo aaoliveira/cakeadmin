@@ -1,6 +1,6 @@
 Access
 
-http://ribafs.net.br/admin_demo/
+http://ribafs.org/admin_demo/
 
 Try with users admin and manager
 
