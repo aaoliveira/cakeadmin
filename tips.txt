@@ -73,6 +73,26 @@ Crio a variável no AppController e uso nos element ou noutra parte de view.
 Também traduzi as duas frases do componente. Veja no código do componente do plugin e no AppController.
 
 
+== Para permitir acesso ao público para os actions index e view:
+
+	public function beforeFilter(){
+		$this->set('title_for_layout','Seção de Administração para o Aplicativo');
+		$this->set('current_user', $this->Auth->user());
+
+	        $this->Auth->allow('index', 'view');
+
+		$controller=$this->params['controller']; 
+		$action=$this->params['action']; 
+
+		if($action != 'index' || $action != 'view'){
+			$this->AccessControl->go($controller,$action); 		 
+			if($this->AccessControl->redir==true){ 
+				$this->redirect(array('controller' => 'users','action' => 'login'));
+			}
+		}
+	} 
+
+
 In English
 
 Wait this text in english or use the google translate to translete now: 
