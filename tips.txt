@@ -92,6 +92,9 @@ Também traduzi as duas frases do componente. Veja no código do componente do p
 		}
 	} 
 
+Como se referir especificamente a determinado controller e seu action (dica do Leandro no grupo de Cake do Google):
+$this->allow(array('controller' => 'pages', 'action' => 'display'));
+
 
 In English
 
